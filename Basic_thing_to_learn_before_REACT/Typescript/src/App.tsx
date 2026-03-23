@@ -1,12 +1,14 @@
-import './App.css'
-import { Person } from './Person'
+import "./App.css";
+import { User } from "./Person";
 function App() {
   return (
     <>
-      <Person name={"David"} age={19} isMarried={false} />{""}
-      <Person name={"Jhon"} age={18} isMarried={true} />{""}
+      <User name={"David"} age={19} isMarried={false} />
+      {""}
+      <User name={"Jhon"} age={18} isMarried={true} />
+      {""}
     </>
   );
 }
 
-export default App
+export default App;
