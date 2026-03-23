@@ -1,5 +1,7 @@
-import { createContext } from "react";
+import { useEffect, useState } from "react";
+import React, { createContext } from "react";
 import { User } from "./Person";
+import { useFormState } from "react-dom";
 export interface User {
   name: string;
   age: number;
@@ -17,4 +19,23 @@ const contextInitailValue = {
   updateUser: () => null,
   DeleteUser: () => null,
 };
-const UserContext = createContext<UserContextType>(contextInitailValue);
+export const UserContext = createContext<UserContextType>(contextInitailValue);
+interface Props {
+  children: React.ReactNode;
+}
+
+export const UserProvider = (props: any) => {
+  const [users, setUser] = useState<User[] | null>(null);
+  useEffect(() => {
+    setUser([{ name: "david", age: 19, isMarried: true }]);
+  }, []);
+  const addUser = (user: User) => null;
+  const updateUser = (id: string) => null;
+  const DeleteUser = (id: string) => null;
+
+  return (
+    <UserContext.Provider value={{ users, addUser, updateUser, DeleteUser }}>
+      {props.childern}
+    </UserContext.Provider>
+  );
+};
