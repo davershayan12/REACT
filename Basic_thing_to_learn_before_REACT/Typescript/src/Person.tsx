@@ -6,7 +6,7 @@ interface Props {
   isMarried: boolean;
   country: Countries;
 }
-export enum Countries {
+export const enum Countries {
   Pakistan = "Pakistan",
   Iran = "Iran",
   Afghanistan = "afghanistan",
