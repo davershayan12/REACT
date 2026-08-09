@@ -6,10 +6,11 @@ import "./App.css";
 import { ProductList } from "./Productlist";
 
 function App() {
-  return;
-  <div>
-    <ProductList></ProductList>;
-  </div>;
+  return (
+    <div>
+      <ProductList />;
+    </div>
+  );
 }
 
 export default App;
