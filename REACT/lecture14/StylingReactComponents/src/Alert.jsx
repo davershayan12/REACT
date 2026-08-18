@@ -1,7 +1,4 @@
-export const Alert = (childern) => {
-  return (
-    <div>
-      <h1>{childern}</h1>
-    </div>
-  );
+import "./Alert.css";
+export const Alert = ({ children, type = "error" }) => {
+  return <div className={`alert ${type}`}>{children}</div>;
 };
