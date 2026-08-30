@@ -3,7 +3,7 @@ export const Contact = () => {
   return (
     <div>
       <h2>contact us</h2>
-      <ActionButton text="send msg"></ActionButton>
+      <ActionButton text="send msg" />
     </div>
   );
 };

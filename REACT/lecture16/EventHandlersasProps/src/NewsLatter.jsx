@@ -1,9 +1,8 @@
-import { ApplicationButton } from "./ActionButton";
-export const Newslatter = () => {
+import { ActiomButton} from "./ActionButton";export const Newslatter = () => {
   return (
     <div>
       <h2>hello</h2>
-      <ApplicationButton text="subscribe" />
+      <ActiomButton text="subscribe" />
     </div>
   );
 };

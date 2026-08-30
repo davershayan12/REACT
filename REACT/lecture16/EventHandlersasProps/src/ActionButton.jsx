@@ -1,3 +1,3 @@
-export const ActiomButton = ({ text }) => {
-  return <button>{text} </button>;
+export const ActionButton = ({ text }) => {
+  return <button>{text}</button>;
 };
