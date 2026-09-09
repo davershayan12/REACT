@@ -1,8 +1,11 @@
+import { useState } from "react";
 export const Counter =()=>{
-    let count =0
+    const [count ,setCount]=useState(0)
+    //current Value ,setterFunction useState(initial value)
+    
     const handleCLick=()=>{
-        count =count=1;
-        console.log(count)
+        setCount(count+1);
+         
     }
     return <button onClick={handleCLick} >count:{count} </button>
 
