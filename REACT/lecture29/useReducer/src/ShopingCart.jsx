@@ -49,9 +49,11 @@ const reducer=(state,action)=>{
                     payload:{id:action.payload.id}
                 })
             }
-            const updateQuantityItems=state.items.map((item)=>{
+            
+            const updateQuantityItems=state.items.map((item)=>
                 item.id===action.payload.id ? {...item,quantity:action.payload.quantity}:item 
-            })
+
+            )
             return{
                 ...state,
                 items:updateQuantityItems,
@@ -60,7 +62,8 @@ const reducer=(state,action)=>{
                 
             }
         }
-            
+        case "CLEAR":
+            return initialState
         default:
             return state
     }
@@ -102,7 +105,16 @@ export const ShopingCart=()=>{
                                         type:"REMOVE_ITEM",
                                         payload:{id:item.id}
                                     })}>remove item</button>
-                                    
+                                    <button onClick={()=>dispatch({
+                                        type:"UPDATE_QUANTITY",
+                                        payload:{id:item.id,
+                                        quantity:item.quantity-1}
+                                    })}>-</button>
+                                    <button onClick={()=>dispatch({
+                                        type:"UPDATE_QUANTITY",
+                                        payload:{id:item.id,
+                                        quantity:item.quantity+1}                                        
+                                    })}>+</button>
                                 </div>
                                 
                             ))
@@ -110,6 +122,13 @@ export const ShopingCart=()=>{
                         }
                         <h3>total:{state.totalItem}</h3>
                         <h3>Total Amount: {state.totalAmount.toFixed(2)}</h3>
+                        {
+                            state.items.length >0 && (
+                                <button onClick={()=>dispatch({
+                                    type:"CLEAR"
+                                })}>clear</button>
+                            )
+                        }                            
                     </div>
                 )}
             </div>
